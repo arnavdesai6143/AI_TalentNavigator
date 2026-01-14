@@ -1,0 +1,420 @@
+.login-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-8);
+    background: linear-gradient(135deg, var(--gray-50) 0%, var(--primary-50) 50%, var(--secondary-50) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Background Effects */
+.login-background {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.login-glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+}
+
+.login-glow-1 {
+    top: -15%;
+    right: -10%;
+    width: 500px;
+    height: 500px;
+    background: rgba(99, 102, 241, 0.12);
+}
+
+.login-glow-2 {
+    bottom: -15%;
+    left: -10%;
+    width: 500px;
+    height: 500px;
+    background: rgba(6, 182, 212, 0.1);
+}
+
+/* Logo - CENTERED AT TOP */
+.login-logo {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    text-decoration: none;
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: var(--font-bold);
+    color: var(--gray-900);
+    margin-bottom: var(--space-8);
+    position: relative;
+    z-index: 1;
+}
+
+.login-logo .logo-icon {
+    width: 44px;
+    height: 44px;
+    background: var(--gradient-primary);
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.login-logo .accent {
+    color: var(--primary-600);
+}
+
+/* Container */
+.login-container {
+    width: 100%;
+    max-width: 440px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Card */
+.login-card {
+    background: var(--bg-elevated);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-2xl);
+    padding: var(--space-10);
+    box-shadow: var(--shadow-xl);
+}
+
+/* Header */
+.login-header {
+    text-align: center;
+    margin-bottom: var(--space-8);
+}
+
+.login-header h1 {
+    font-family: var(--font-display);
+    font-size: var(--text-2xl);
+    font-weight: var(--font-bold);
+    color: var(--gray-900);
+    margin-bottom: var(--space-2);
+}
+
+.login-header p {
+    color: var(--gray-500);
+    font-size: var(--text-sm);
+}
+
+/* Error Message */
+.error-message {
+    padding: var(--space-3) var(--space-4);
+    background: var(--error-50);
+    border: 1px solid var(--error-200);
+    border-radius: var(--radius-lg);
+    color: var(--error-600);
+    font-size: var(--text-sm);
+    margin-bottom: var(--space-5);
+}
+
+/* Form */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+}
+
+.input-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4);
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.input-group label {
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    color: var(--gray-700);
+}
+
+.input-wrapper {
+    position: relative;
+}
+
+.input-wrapper .input {
+    padding-left: calc(var(--space-4) + 24px);
+    padding-right: var(--space-4);
+}
+
+.input-wrapper .input-icon {
+    position: absolute;
+    left: var(--space-4);
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--gray-400);
+    pointer-events: none;
+}
+
+.password-toggle {
+    position: absolute;
+    right: var(--space-3);
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--gray-400);
+    cursor: pointer;
+    padding: var(--space-1);
+    transition: color var(--transition-fast);
+    background: none;
+    border: none;
+}
+
+.password-toggle:hover {
+    color: var(--gray-600);
+}
+
+/* Select */
+.input.select {
+    appearance: none;
+    cursor: pointer;
+    padding-right: var(--space-10);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%239ca3af' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right var(--space-4) center;
+}
+
+/* Submit Button */
+.submit-btn {
+    width: 100%;
+    margin-top: var(--space-2);
+}
+
+.submit-btn .spin {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Divider */
+.login-divider {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    margin: var(--space-8) 0;
+}
+
+.login-divider::before,
+.login-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--gray-200);
+}
+
+.login-divider span {
+    font-size: var(--text-sm);
+    color: var(--gray-500);
+}
+
+/* Demo Buttons - FIXED SPACING */
+.demo-buttons {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+}
+
+.demo-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-4);
+    background: var(--gray-50);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-lg);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.demo-btn:hover {
+    background: var(--primary-50);
+    border-color: var(--primary-300);
+}
+
+.demo-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.demo-role {
+    font-size: var(--text-sm);
+    font-weight: var(--font-semibold);
+    color: var(--gray-900);
+}
+
+.demo-name {
+    font-size: var(--text-xs);
+    color: var(--gray-500);
+}
+
+/* Footer Text */
+.login-footer-text {
+    text-align: center;
+    margin-top: var(--space-6);
+    font-size: var(--text-sm);
+    color: var(--gray-500);
+}
+
+.toggle-btn {
+    color: var(--primary-600);
+    font-weight: var(--font-semibold);
+    margin-left: var(--space-1);
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color var(--transition-fast);
+}
+
+.toggle-btn:hover {
+    color: var(--primary-700);
+    text-decoration: underline;
+}
+
+/* Skill Selection Styles */
+.label-icon {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: var(--space-1);
+    color: var(--primary-500);
+}
+
+.input-hint {
+    font-size: var(--text-xs);
+    color: var(--gray-500);
+    margin-top: var(--space-1);
+}
+
+.skills-section {
+    margin-top: var(--space-2);
+}
+
+.selected-skills {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    margin-bottom: var(--space-3);
+}
+
+.skill-tag {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-2) var(--space-3);
+    background: var(--gray-50);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-lg);
+}
+
+.skill-tag .skill-name {
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    color: var(--gray-700);
+    min-width: 100px;
+}
+
+.skill-tag .skill-slider {
+    flex: 1;
+    height: 6px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: var(--gray-200);
+    border-radius: var(--radius-full);
+    outline: none;
+    cursor: pointer;
+}
+
+.skill-tag .skill-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    background: var(--primary-500);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform var(--transition-fast);
+}
+
+.skill-tag .skill-slider::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+}
+
+.skill-tag .skill-level {
+    font-size: var(--text-sm);
+    font-weight: var(--font-semibold);
+    color: var(--primary-600);
+    min-width: 40px;
+    text-align: right;
+}
+
+.skill-tag .remove-skill {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    background: none;
+    border: none;
+    color: var(--gray-400);
+    cursor: pointer;
+    padding: 0;
+    border-radius: var(--radius-full);
+    transition: all var(--transition-fast);
+}
+
+.skill-tag .remove-skill:hover {
+    background: var(--error-50);
+    color: var(--error-500);
+}
+
+.add-skill-container {
+    margin-top: var(--space-2);
+}
+
+.add-skill-select {
+    width: 100%;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .login-page {
+        padding: var(--space-4);
+    }
+
+    .login-card {
+        padding: var(--space-6);
+    }
+
+    .input-row {
+        grid-template-columns: 1fr;
+    }
+
+    .demo-buttons {
+        grid-template-columns: 1fr;
+    }
+
+    .skill-tag {
+        flex-wrap: wrap;
+    }
+
+    .skill-tag .skill-name {
+        min-width: 80px;
+    }
+}
