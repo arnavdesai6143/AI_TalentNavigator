@@ -37,5 +37,5 @@ Step 2: Start the Frontend
 
 # Verification
 1. Open your browser to http://localhost:5173.
-2. Login/Register: Create a new account or log in.
+2. Login/Register: Create a new account or log in (you can also log in as a demo user).
 3. Test agents: Go to "Agent Playground", set your target role in settings (or during registration), and ask the Orchestrator for advice.
